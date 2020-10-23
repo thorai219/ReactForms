@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import uuid from 'uuid/v4';
-import './NewBoxForm.css'
+import { v4 as uuidv4 } from 'uuid';
 
-const NewBoxForm = () => {
+const NewBoxForm = ({ createBox }) => {
   const initial_state = {
     color: "",
     width: "",
@@ -18,14 +17,14 @@ const NewBoxForm = () => {
   }
   const handleSubmit = e => {
     e.preventDefault();
-    createBox({...formData, id: uuid()})
+    createBox({...formData, id: uuidv4()})
     setFormData(initial_state)
   }
   return(
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div>
-          <lable className="label" htmlFor="color">Enter a color</lable>
+          <label className="label" htmlFor="color">Enter a color</label>
           <input 
             type="text"
             id="color"
@@ -35,7 +34,7 @@ const NewBoxForm = () => {
           />
         </div>
         <div>
-          <lable className="label" htmlFor="width">Enter a width</lable>
+          <label className="label" htmlFor="width">Enter a width</label>
           <input 
             type="text"
             id="width"
@@ -45,7 +44,7 @@ const NewBoxForm = () => {
           />
         </div>
         <div>
-        <lable className="label" htmlFor="height">Enter a height</lable>
+        <label className="label" htmlFor="height">Enter a height</label>
         <input 
           type="text"
           id="height"
@@ -54,6 +53,7 @@ const NewBoxForm = () => {
           onChange={handleChange}
         />
         </div>
+        <button>Create Box</button>
       </form>
     </div>
   )

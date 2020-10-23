@@ -1,14 +1,19 @@
 import React from 'react';
 
-const Box = ({ color, width, height }) => {
+function Box({id, width, height, color, handleRemove}) {
+  const remove = () => handleRemove(id)
   return(
-    <div
-      style={{
-        backgroundColor: color,
-        width: width,
-        height: height
-      }}
-    ></div>
+    <div>
+      <div
+        style={{
+          height: `${height}em`,
+          width: `${width}em`,
+          backgroundColor: color
+        }}
+      >
+      </div>
+      <button onClick={remove}>Remove</button>
+    </div>
   )
 }
 

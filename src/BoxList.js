@@ -8,7 +8,7 @@ const BoxList = () => {
     setBoxes(boxes => [...boxes, boxObj])
   }
   const remove = id => {
-    setBoxes(boxes = id => boxes.filter(box = box.id !== id))
+    setBoxes(boxes => boxes.filter(box => box.id !== id))
   }
 
   const boxComponents = boxes.map(box => (
@@ -23,7 +23,7 @@ const BoxList = () => {
   ))
 
   return (
-    <div>
+    <div className='box-container'>
       <NewBoxForm createBox={create}/>
       {boxComponents}
     </div>
