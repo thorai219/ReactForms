@@ -24,36 +24,48 @@ const NewBoxForm = ({ createBox }) => {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div>
-          <label className="label" htmlFor="color">Enter a color</label>
+          <label 
+            className="label" 
+            htmlFor="color"
+          >Color</label>
           <input 
             type="text"
             id="color"
             name="color"
+            data-testid="color"
             value={formData.color}
             onChange={handleChange}
           />
         </div>
         <div>
-          <label className="label" htmlFor="width">Enter a width</label>
+          <label
+            className="label" 
+            htmlFor="width"
+          >Width</label>
           <input 
             type="text"
             id="width"
+            data-testid="width"
             name="width"
             value={formData.width}
             onChange={handleChange}
           />
         </div>
         <div>
-        <label className="label" htmlFor="height">Enter a height</label>
+        <label 
+          className="label" 
+          htmlFor="height"
+        >Height</label>
         <input 
           type="text"
           id="height"
           name="height"
+          data-testid="height"
           value={formData.height}
           onChange={handleChange}
         />
         </div>
-        <button>Create Box</button>
+        <button data-testid="create-btn">Create Box</button>
       </form>
     </div>
   )

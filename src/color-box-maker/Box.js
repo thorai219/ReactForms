@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Box({id, width, height, color, handleRemove}) {
+function Box({id, width=10, height=10, color='limegreen', handleRemove}) {
   const remove = () => handleRemove(id)
   return(
     <div>
@@ -12,7 +12,7 @@ function Box({id, width, height, color, handleRemove}) {
         }}
       >
       </div>
-      <button onClick={remove}>Remove</button>
+      <button onClick={remove} data-testid="delete-btn">Remove</button>
     </div>
   )
 }
